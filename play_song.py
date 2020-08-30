@@ -8,20 +8,7 @@ username = "arnavmenon"
 token = SpotifyOAuth(scope=scope, username=username)
 spotifyObject = spotipy.Spotify(auth_manager=token)
 
-r = spotifyObject.recommendation_genre_seeds()
-fy = spotifyObject.recommendations(seed_genres=r)
-
-# with open("track.json", "w") as f:
-#     json.dump(fy, f, indent=2)
-
-# with open("data.json", "w") as write_file: 
-#     json.dump(spotifyObject.devices(), write_file, indent=2)
-
-
 device = spotifyObject.devices()
-
-# with open("track.json", "w") as file:
-#     json.dump(spotifyObject.current_playback(), file, indent=2)
 
 device = spotifyObject.current_playback()
 d = ""
@@ -37,8 +24,6 @@ def play_pause():
     else:
         spotifyObject.start_playback(device_id=d)
 
-    # with open("track.json", "w") as file:
-    #     json.dump(spotifyObject.current_playback(), file, indent=2)
 
 def next_song():
     spotifyObject.next_track(device_id=d)
