@@ -6,8 +6,12 @@ import spotipy
 from json import JSONDecodeError
 import os
 
+
+# remember to add your username on line 37 and create a secret key on line 14
+
+
 app = Flask(__name__)
-app.secret_key = "SDHFJKSDFHUIEF"
+app.secret_key = ""
 app.permanent_session_lifetime = timedelta(minutes=1)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.sqlite3"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -30,7 +34,7 @@ class playlist(db.Model):
 def home_page():
     global username
     global spotifyObject
-    username = "arnavmenon"
+    username = ""
     try:
         token = spotipy.oauth2.SpotifyOAuth(scope=scope, username=username)
     except (AttributeError, JSONDecodeError):
