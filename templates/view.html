@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}View All Users{% endblock %}
+{% block content %}
+<center>
+    {% for message in get_flashed_messages() %}
+        <h3>{{ message }}</h3>
+    {% endfor %}
+</center>
+
+    {% for item in values %}
+        <p>Playlist Title: {{item.title}}, Playlist Description: {{item.description}}</p>
+    {% endfor %}
+{% endblock %}

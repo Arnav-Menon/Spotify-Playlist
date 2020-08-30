@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Create Your Own Playlist!{% endblock %}
+{% block content %}
+
+    {% for message in get_flashed_messages() %}
+    <center>
+      <h5>{{ message }}</h5>
+    </center>
+    {% endfor %}
+
+    <!-- {% for item in values %}
+      <p>Playlist Title: {{item.title}}, Playlist Description: {{item.description}}</p>
+    {% endfor %} -->
+
+    <center><h5>This Will Create a Playlist of Your Top Tracks</h5></center>
+
+    <form action="#" method="POST">
+
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="What is the title of your playlist">
+        </div>
+      
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" id="desc" name="desc" placeholder="Provide Playlist Decription">
+        </div>
+      
+        <div class="form-group">
+          <label>Time Range</label>
+          <input type="text" class="form-control" id="time" name="time" placeholder="'short_term', 'medium_term', or 'long_term'">
+        </div>
+
+        <div class="form-group">
+          <label>Songs</label>
+          <input type="number" class="form-control" id="size" name="size" placeholder="How Many Songs Do You Want (1 - 20)">
+        </div>
+
+      
+        <button type="submit" class="btn btn-primary">Next</button>
+
+      </form>
+{% endblock %}

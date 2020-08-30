@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}My Playlists{% endblock %}
+{% block content %}
+
+    {% for msg in get_flashed_messages() %}
+       <center><h5>{{msg}}</h5></center>
+    {% endfor %}
+
+    {% for p in playlists %}
+        <li>{{p}}</li>
+    {% endfor %}
+{% endblock %}

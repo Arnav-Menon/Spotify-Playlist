@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Songs{% endblock %}
+{% block content %}
+<h3>Enter Songs</h3>
+
+    {% for i in range(value | int) %}
+        <div clas="form-group">
+            <input type="text" class="form-group" placeholder="Song {{i+1}}"/>
+        </div>
+    {% endfor %}
+    <form action="/home" method="GET">
+        <button type="submit" class="btn btn-primary">Create Playlist!</button> 
+    </form>
+{% endblock %}

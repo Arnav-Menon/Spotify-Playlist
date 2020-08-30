@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+    Spotify
+{% endblock %}
+{% block content %}
+
+    <center>
+        {% for msg in get_flashed_messages() %}
+            <h2>{{msg}}</h2>
+        {% endfor %}
+    </center>
+{% endblock %}
