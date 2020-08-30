@@ -43,32 +43,6 @@ def home_page():
     flash("Welcome to Spotify on the Web, " + str(display_name))
     return render_template("home.html")
 
-# def home_page():
-#     global username
-#     global token
-#     global spotifyObject
-#     username = "arnavmenon"
-#     token = spotipy.oauth2.SpotifyOAuth(scope=scope, username=username)
-
-#     if token:
-#         spotifyObject = spotipy.Spotify(auth_manager=token)
-#         flash("Welcome to Spotify on the Web")
-#         return render_template("home.html")
-#     else:
-#         return "<h5>Can't log you in</h5>"
-
-# @app.route("/next")
-# def next():
-#     next_song()
-#     return render_template("home.html")
-
-# @app.route("/login")
-# def login():
-    # login()
-
-# @app.route("/logout")
-# def logout():
-
 @app.route("/playlists")
 def display_playlists():
     global spotifyObject
